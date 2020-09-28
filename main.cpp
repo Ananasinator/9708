@@ -9,8 +9,8 @@
     7. вывести max произведение пар чисел с разных позиций, кот. делится на 14
 
 План разработки решения Б:
-1. ввести и запомнить количество чисел
-2. ввести число и:
+1. ввести и запомнить количество чисел ✓
+2. ввести число и: ✓
     • если оно делится на 14, возможно записать его в рекордсмены как m14_1 либо m14_2
     • если оно делится на 7, но не на 2, возможно записать его в рекордсмены как m7not2
     • если оно делится на 2, но не на 7, возможно записать его в рекордсмены как m2not7
@@ -27,5 +27,26 @@ using namespace std;
 int main() {
     int q = 0;
     cin >> q;
+
+    int m14_1 = 0, m14_2 = 0, m7not2 = 0, m2not7 = 0, mnot2not7 = 0;
+    int numbers[q];
+    for (int i = 0; i < q; i++) {
+        cin >> numbers[i];
+        if (numbers[i] % 14 == 0) {
+            if (numbers[i] > m14_1) {
+                m14_2 = m14_1;
+                m14_1 = numbers[i];
+            } else if (numbers[i] < m14_1) {
+                m14_2 = numbers[i];
+            }
+        } else if (numbers[i] % 7 == 0 and numbers[i] % 2 != 0) {
+            m7not2 = numbers[i];
+        } else if (numbers[i] % 2 == 0 and numbers[i] % 7 != 0) {
+            m2not7 = numbers[i];
+        } else if (numbers[i] % 2 != 0 and numbers[i] % 7 != 0) {
+            mnot2not7 = numbers[i];
+        }
+    }
+    cout << m14_1 << " " << m14_2 << " " << m7not2 << " " << m2not7 << " " << mnot2not7;
     return 0;
 }
