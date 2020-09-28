@@ -33,8 +33,9 @@ int main() {
         cin >> numbers[i];
     }
 
-    for (int i = 0; i < q; ++i) {
-        cout << numbers[i] << " ";
-    }
+    for (int i = 0; i < q; i++)
+        for (int j = 0; j < q; j++) {
+            cout << numbers[i] << ' ' << numbers[j] << endl;
+        }
     return 0;
 }
