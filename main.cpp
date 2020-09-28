@@ -55,8 +55,12 @@ int main() {
     res[2] = m7not2 * m2not7;
     res[3] = m14_1 * m14_2;
     res[4] = m14_1 * mnot2not7;
-    for(int i = 0; i < 5; i++) {
-        cout << res[i] << endl;
+    int maximum = 0;
+    for (int i = 0; i < 5; i++) {
+        if (res[i] > maximum) {
+            maximum = res[i];
+        }
     }
+    cout << maximum;
     return 0;
 }
