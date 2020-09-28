@@ -33,11 +33,14 @@ int main() {
         cin >> numbers[i];
     }
 
+    int champion = -1;
     for (int i = 0; i < q; i++)
         for (int j = i + 1; j < q; j++) {
             int tmp = numbers[i] * numbers[j];
-            if (tmp % 14 == 0)
-                cout << tmp << endl;
+            if (tmp % 14 == 0 and tmp > champion)
+                champion = tmp;
         }
+
+    cout << champion << endl;
     return 0;
 }
