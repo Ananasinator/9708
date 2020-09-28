@@ -35,7 +35,7 @@ int main() {
 
     for (int i = 0; i < q; i++)
         for (int j = i + 1; j < q; j++) {
-            cout << numbers[i] << ' ' << numbers[j] << endl;
+            cout << numbers[i] * numbers[j] << endl;
         }
     return 0;
 }
