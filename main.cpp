@@ -25,6 +25,7 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!!" << endl;
+    int q = 0;
+    cin >> q;
     return 0;
 }
